@@ -7,7 +7,7 @@ docker compose up --build -d
 localhost:3000 접속
 
 ## 진행상황
-- 
+- 231028: loggermodule까지 진행
 
 
 ## 출처
