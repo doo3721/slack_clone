@@ -9,6 +9,7 @@ localhost:3000 접속
 ## 진행상황
 - 231028: loggermodule까지 진행
 - 231030: API 문서 만들기까지 진행
+- 231102: typeorm seeding, migration 까지 진행
 
 
 ## 출처

@@ -1,13 +1,14 @@
 services:
-  # postgresql:
-  #   container_name: postgresql
-  #   image: postgres:latest
-  #   volumes:
-  #     - ./data/postgresql/:/var/lib/postgresql/data
-  #   env_file:
-  #     - .env
-  #   networks:
-  #     - nodejs_network
+  postgresql:
+    container_name: postgresql
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ts_user
+      POSTGRES_PASSWORD: ts_pass
+      POSTGRES_DB: ts_db
+    networks:
+      - nodejs_network
+
   nestjs:
     container_name: nestjs
     build:
@@ -15,11 +16,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
-    env_file:
-      - .env
-#     networks:
-#       - nodejs_network
+    networks:
+      - nodejs_network
 
-# networks:
-#   docker_network:
-#     name: nodejs_network
+networks:
+  nodejs_network:
+    name: nodejs_network
